@@ -1,0 +1,71 @@
+---
+import Layout from "../layouts/Layout.astro"
+---
+
+<Layout title="Contact - L10">
+    <section
+    class="contactBg flex justify-center items-center py-16 px-4 gap-8 md:h-[90vh]"
+    >
+        <div class="flex w-full justify-center items-center flex-wrap gap-16 max-w-screen-xl">
+            <div class="w-full max-w-[400px]">
+                <h2 class="mb-6 text-5xl lg:text-7xl font-bold">Contact</h2>
+                <p class="mb-6">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque consequatur perspiciatis rem iusto blanditiis quia recusandae, odio eligendi sit ipsum!
+                </p>
+                <div class="flex flex-col">
+                    <p class="mb-2">Buenos Aires, Argentina</p>
+                    <a href="tel:1112738922" class="mb-2">+54 11 1273 8922</a>
+                    <a href="mailto:l10messi@email.com" class="mb-2"
+                    >l10messi@email.com</a
+                    >
+                </div>
+            </div>
+            <form class=" w-full max-w-[400px]">
+                <div class="mb-2 flex flex-col">
+                    <label for="name">Full Name </label>
+                    <input
+                        type="text"
+                        class="bg-white focus:border-2 focus:border-[var(--gold)] border-2 border-[var(--light)] resize-none text-black p-2 rounded-md"
+                        id="name"
+                        name="name"
+                        required
+                    />
+                </div>
+                <div class="mb-2 flex flex-col">
+                    <label for="email">Email </label>
+                    <input
+                        type="email"
+                        class="bg-white focus:border-2 focus:border-[var(--gold)] border-2 border-[var(--light)] resize-none text-black p-2 rounded-md"
+                        id="email"
+                        name="email"
+                        required
+                    />
+                </div>
+                <div class="mb-6 flex flex-col">
+                    <label for="message" >Message</label>
+                    <textarea
+                        class="bg-white focus:border-2 focus:border-[var(--gold)] border-2 border-[var(--light)] resize-none text-black p-2 rounded-md"
+                        id="message"
+                        rows="3"
+                        name="message"
+                        required
+                    ></textarea>
+                </div>
+                <button
+                type="submit"
+                class="bg-[#E8B34B] font-bold hover:text-[#E8B34B] hover:bg-black text-black px-4 py-1 border-2 border-[#E8B34B] hover:border-[#E8B34B] transition-all duration-300 rounded"
+                >
+                Enviar
+                </button>
+            </form>
+        </div>
+    </sectio>
+</Layout>
+
+<style>
+    .contactBg {
+    background-image: url("https://place-hold.it/1920x1080");
+    background-size: cover;
+    background-position: center 25%;
+}
+</style>

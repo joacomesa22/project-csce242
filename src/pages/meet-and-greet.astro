@@ -1,0 +1,112 @@
+---
+import Layout from "../layouts/Layout.astro"
+---
+
+<Layout title="Meet&Greet - L10">
+    <main>
+        <section class="flex items-center justify-center p-16 gap-8 flex-wrap">
+            <div class="flex flex-col items-start gap-4 max-w-[600px]">
+              <h1 class="text-5xl">¿Would you like to meet Lionel Messi?</h1>
+              <h3 class="text-xl">Lorem, ipsum dolor sit amet consectetur adipisicing.</h3>
+              <a
+              href="#form"
+              class="bg-[var(--gold)] font-bold hover:text-[var(--gold)] hover:bg-black text-black px-4 py-1 border-2 border-[var(--gold)] hover:border-[var(--gold)] transition-all duration-300 rounded"
+              >Sign Up</a
+            >
+            </div>
+            <div>
+              <img src="https://place-hold.it/500" alt="#" class="w-full rounded-full border-2 border-[var(--gold)]"/>
+            </div>
+          </section>
+        
+          <section class="flex flex-wrap gap-8 justify-around items-center border-y-2 border-[var(--gold)] p-12 text-xl">
+            <div class="flex items-center justify-center gap-4 text-center">
+              <i class="fa-solid fa-location-dot text-[var(--gold)]"></i>
+              <p>Buenos Aires</p>
+            </div>
+            <div class="flex items-center justify-center gap-4 text-center">
+              <i class="fa-solid fa-calendar-days text-[var(--gold)]"></i>
+              <p>23/10</p>
+            </div>
+            <div class="flex items-center justify-center gap-4 text-center">
+              <i class="fa-solid fa-clock text-[var(--gold)]"></i>
+              <p>21:00hs</p>
+            </div>
+          </section>
+
+          <section class="flex flex-col items-center gap-8 py-16">
+            <div class="flex justify-center items-center gap-8 rounded-3xl flex-wrap p-8">
+              <div class="flex flex-col gap-2 max-w-[500px]">
+                <h2 class="text-3xl text-[var(--gold)] ">Unique Oportunity</h2>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quae atque alias odit nostrum magnam maxime a, ipsam id mollitia incidunt?
+                </p>
+              </div>
+              <div class="max-w-[500px]">
+                <img src="https://place-hold.it/500x300" alt="#" class="w-full rounded-3xl border-2 border-[var(--gold)]"/>
+              </div>
+            </div>
+            <div class="flex flex-row-reverse justify-center items-center gap-8 rounded-3xl flex-wrap p-8">
+              <div class="flex flex-col gap-2 max-w-[500px]">
+                <h2 class="text-3xl text-[var(--gold)] ">An unforgettable Memory</h2>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia aspernatur minus sequi molestiae nulla iste, laboriosam labore quasi repudiandae hic?
+                </p>
+              </div>
+              <div class="max-w-[500px]">
+                <img src="https://place-hold.it/500x300" alt="#" class="w-full rounded-3xl border-2 border-[var(--gold)]"/>
+              </div>
+            </div>
+          </section>
+        
+          <section class="flex flex-wrap gap-8 justify-around items-center border-y-2 border-[var(--gold)] p-12 text-xl text-center">
+              <h3>Fill the form down below to participate!</h3>
+          </section>
+
+          <section class="flex justify-center items-center gap-8 p-16 flex-wrap">
+            <div class="max-w-[500px]">
+              <img src="https://place-hold.it/500x400" alt="#" class="w-full border-2 border-[var(--gold)] rounded-3xl"/>
+            </div>
+      
+            <form class="flex flex-col items-start gap-4" id="form">
+                <label for="name" class="flex flex-col gap-2">
+                  <span class="text-2xl font-bold">Full Name</span>
+                  <input type="text" name="name" id="name" required class="rounded-lg text-[var(--dark)] focus:border-2 focus:border-[var(--gold)] border-2 border-[var(--light)]"/>
+                </label>
+              <label for="email" class="flex flex-col gap-2">
+                <span class="text-2xl font-bold">Email</span>
+                <input type="email" name="email" id="email" required class="rounded-lg text-[var(--dark)] focus:border-2 focus:border-[var(--gold)] border-2 border-[var(--light)]"/>
+              </label>
+              <label for="country" class="flex flex-col gap-2">
+                <span class="text-2xl font-bold">Country</span>
+                <input type="text" name="country" id="country" required class="rounded-lg text-[var(--dark)] focus:border-2 focus:border-[var(--gold)] border-2 border-[var(--light)]"/>
+              </label>
+
+              <div class="flex flex-col">
+                <span class="mb-2 text-2xl font-bold">Gender</span>
+                <div class="flex items-start gap-4">
+                  <label>
+                    <input type="radio" name="gender" value="f" class="text-[var(--gold)]"/>
+                    <span>Female</span>
+                  </label>
+      
+                  <label>
+                    <input type="radio" name="gender" value="m" class="text-[var(--gold)]"/>
+                    <span>Male</span>
+                  </label>
+      
+                  <label>
+                    <input type="radio" name="gender" value="o" class="text-[var(--gold)]"/>
+                    <span>Other</span>
+                  </label>
+                </div>
+                </div>
+
+                <input type="submit" value="Submit" class="bg-[var(--gold)] font-bold hover:text-[var(--gold)] hover:bg-black text-black px-4 py-1 border-2 border-[var(--gold)] hover:border-[var(--gold)] transition-all duration-300 rounded cursor-pointer" />
+            </form>
+          </section>
+
+
+    </main>
+</Layout>
+
