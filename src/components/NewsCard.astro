@@ -1,17 +1,20 @@
+---
+const {imgSrc, hours, text} = Astro.props
+---
 <div
 class="border-2 rounded-md border-[#E8B34B] w-full md:max-w-[280px] overflow-hidden"
 >
 <div class="w-full">
   <img
-    src="https://place-hold.it/300"
-    alt="img noticia"
+    src={imgSrc}
+    alt="News image"
     class="w-full"
   />
 </div>
 <div class="p-4 flex flex-col gap-2">
-  <p class="text-[0.7rem]">8 hours ago</p>
+  <p class="text-[0.7rem]">{hours} hours ago</p>
   <p class="font-bold">
-    Lorem ipsum dolor sit amet consectetur.
+    {text}
   </p>
   <a href="#" class="text-[#E8B34B] text-sm underline"
     >Read More</a

@@ -1,13 +1,16 @@
+---
+const {badgeLocal, badgeAway, time, type} = Astro.props
+---
 <div class="p-10 border-2 border-[var(--gold)] flex flex-col justify-between items-center gap-4 w-full md:w-[300px] text-center">
-    <p class="text-[var(--gold)] text-xl font-bold">5 Jun - 12:00pm</p>
+    <p class="text-[var(--gold)] text-xl font-bold">{time}</p>
     <div class="flex gap-4 items-center">
-    <img src="https://place-hold.it/120" class="w-[50px]" alt="escudo" />
+    <img src={badgeLocal} class="w-[50px]" alt="escudo" />
     <span class="font-bold">vs</span>
     <img
-        src="https://place-hold.it/120"
+        src={badgeAway}
         class="w-[50px]"
-        alt="escudo"
+        alt="badge"
     />
     </div>
-    <p class="font-bold">Friendly</p>
+    <p class="font-bold">{type}</p>
 </div>
