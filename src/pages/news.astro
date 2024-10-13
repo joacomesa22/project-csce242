@@ -45,7 +45,7 @@ const res = await data.json()
           <h2 class="text-2xl md:text-4xl font-bold text-center">
             More intereting news...
           </h2>
-          <div id="news-container" class="flex flex-wrap justify-center gap-6 w-full">
+          <div class="flex flex-wrap justify-center gap-6 w-full">
             {res.map(item => {
               return <NewsCard imgSrc={item.img} hours={item.hours} text={item.title} link={item.link} category={item.category}/>
             })}
