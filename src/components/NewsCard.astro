@@ -1,23 +1,19 @@
 ---
-const {imgSrc, hours, text} = Astro.props
+const {imgSrc, hours, text, category, link} = Astro.props
 ---
-<div
-class="border-2 rounded-md border-[#E8B34B] w-full md:max-w-[280px] overflow-hidden"
->
-<div class="w-full">
-  <img
-    src={imgSrc}
-    alt="News image"
-    class="w-full"
-  />
-</div>
-<div class="p-4 flex flex-col gap-2">
-  <p class="text-[0.7rem]">{hours} hours ago</p>
-  <p class="font-bold">
-    {text}
-  </p>
-  <a href="#" class="text-[#E8B34B] text-sm underline"
-    >Read More</a
-  >
-</div>
+<div class="border-2 rounded-md border-[#E8B34B] w-full md:max-w-[280px] overflow-hidden">
+  <div class="w-full">
+    <img src={imgSrc} alt={text} class="w-full"/>
+  </div>
+  <div class="p-4 flex flex-col gap-2">
+    <p class="text-[0.7rem]">{hours} hours ago</p>
+    <p class="font-bold">{text}</p>
+
+    <div class="flex gap-2">
+      {
+        category.map((cat) => <span class="text-xs">{cat}</span>)
+      }
+    </div>
+    <a href={link} class="text-[#E8B34B] text-sm underline">Read More</a>
+  </div>
 </div>
