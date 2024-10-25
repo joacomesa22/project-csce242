@@ -20,7 +20,16 @@ import Layout from "../layouts/Layout.astro"
                     >
                 </div>
             </div>
-            <form class=" w-full max-w-[400px]">
+            <form 
+                class=" w-full max-w-[400px]"
+                method="POST"
+                id="contact-form"
+            >
+            <input
+            type="hidden"
+            name="access_key"
+            value="d20c1ebe-a85e-4ed3-94ea-1b1826cb2bd4"
+          />
                 <div class="mb-2 flex flex-col">
                     <label for="name">Full Name </label>
                     <input
@@ -51,12 +60,16 @@ import Layout from "../layouts/Layout.astro"
                         required
                     ></textarea>
                 </div>
-                <button
-                type="submit"
-                class="bg-[#E8B34B] font-bold hover:text-[#E8B34B] hover:bg-black text-black px-4 py-1 border-2 border-[#E8B34B] hover:border-[#E8B34B] transition-all duration-300 rounded"
-                >
-                Enviar
+                <div class="flex items-center gap-4">
+                    <button
+                    type="submit"
+                    id="submitBtn"
+                    class="bg-[#E8B34B] font-bold hover:text-[#E8B34B] hover:bg-black text-black px-4 py-1 border-2 border-[#E8B34B] hover:border-[#E8B34B] transition-all duration-300 rounded"
+                    >
+                    Send
                 </button>
+                <p id="status"></p>
+            </div>
             </form>
         </div>
     </sectio>
@@ -69,3 +82,48 @@ import Layout from "../layouts/Layout.astro"
     background-position: 30% 25%;
 }
 </style>
+
+<script>
+const status = document.querySelector("#status");
+const contactForm = document.querySelector("#contact-form")
+const fullName = document.querySelector("#name") as HTMLFormElement
+const email = document.querySelector("#email") as HTMLFormElement
+const message = document.querySelector("#message") as HTMLFormElement
+    
+const sendEmail = async (json) => {
+  try {
+    const res = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: json,
+    });
+    return res;
+  } catch (error) {
+    console.log(error);
+    status.innerHTML = "There was an error when trying to send the email. Please try again";
+  }
+};
+
+
+  contactForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const form = e.target as HTMLFormElement; // Cast e.target to HTMLFormElement
+    const formData = new FormData(form)
+    const object = Object.fromEntries(formData);
+    const json = JSON.stringify(object);
+    status.innerHTML = "Sending...";
+    const httpResult = await sendEmail(json);
+    console.log(httpResult)
+    if (httpResult.status === 200) {
+      status.innerHTML = "Email sent!";
+    } else {
+      status.innerHTML = "Failed to send email. Please try again later.";
+    }
+    fullName.value = ""
+    email.value = ""
+    message.value = ""
+  });
+</script>
