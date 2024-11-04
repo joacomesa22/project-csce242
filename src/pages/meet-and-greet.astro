@@ -1,112 +1,23 @@
 ---
+import InfoItemMG from "../components/InfoItemMG"
 import Layout from "../layouts/Layout.astro"
+import BannerMG from "../sections/meet-and-greet/BannerMG"
+import FormSectionMG from "../sections/meet-and-greet/FormSectionMG"
+import HeroMG from "../sections/meet-and-greet/HeroMG"
+import Info from "../sections/meet-and-greet/Info"
 ---
 
 <Layout title="Meet&Greet - L10">
-    <main>
-        <section class="flex items-center justify-center p-16 gap-8 flex-wrap">
-            <div class="flex flex-col items-start gap-4 max-w-[600px]">
-              <h1 class="text-5xl">¿Would you like to meet Lionel Messi?</h1>
-              <h3 class="text-xl">Sign up for the givaway for a chance to win a meet and greet with the best in the world!</h3>
-              <a
-              href="#form"
-              class="bg-[var(--gold)] font-bold hover:text-[var(--gold)] hover:bg-black text-black px-4 py-1 border-2 border-[var(--gold)] hover:border-[var(--gold)] transition-all duration-300 rounded"
-              >Sign Up</a
-            >
-            </div>
-            <div>
-              <img src="img/hero-myg.jpeg" alt="#" class="w-full rounded-full border-2 border-[var(--gold)] max-w-[500px]"/>
-            </div>
-          </section>
-        
-          <section class="flex flex-wrap gap-8 justify-around items-center border-y-2 border-[var(--gold)] p-12 text-xl">
-            <div class="flex items-center justify-center gap-4 text-center">
-              <i class="fa-solid fa-location-dot text-[var(--gold)]"></i>
-              <p>Buenos Aires</p>
-            </div>
-            <div class="flex items-center justify-center gap-4 text-center">
-              <i class="fa-solid fa-calendar-days text-[var(--gold)]"></i>
-              <p>23/10</p>
-            </div>
-            <div class="flex items-center justify-center gap-4 text-center">
-              <i class="fa-solid fa-clock text-[var(--gold)]"></i>
-              <p>21:00hs</p>
-            </div>
-          </section>
-
-          <section class="flex flex-col items-center gap-8 py-16">
-            <div class="flex justify-center items-center gap-8 rounded-3xl flex-wrap p-8">
-              <div class="flex flex-col gap-2 max-w-[500px]">
-                <h2 class="text-3xl text-[var(--gold)] ">Unique Oportunity</h2>
-                <p>
-                  The world champion is coming to Buenos Aires, and you could meet him. The Meet & Greet will take place on October 23rd at 9:00 PM. The exact location will be privately sent to the winner.
-                </p>
-              </div>
-              <div class="max-w-[500px]">
-                <img src="/img/infoImg1.jpeg" alt="Messi celebrating" class="w-full rounded-3xl border-2 border-[var(--gold)]"/>
-              </div>
-            </div>
-            <div class="flex flex-row-reverse justify-center items-center gap-8 rounded-3xl flex-wrap p-8">
-              <div class="flex flex-col gap-2 max-w-[500px]">
-                <h2 class="text-3xl text-[var(--gold)] ">An unforgettable Memory</h2>
-                <p>
-                  During the event, you'll be able to chat, take photos, request autographs, and more. Additionally, you'll receive an original signed Argentina jersey!
-                </p>
-              </div>
-              <div class="max-w-[500px]">
-                <img src="/img/infoImg2.jpg" alt="Messi celebrating" class="w-full rounded-3xl border-2 border-[var(--gold)]"/>
-              </div>
-            </div>
-          </section>
-        
-          <section class="flex flex-wrap gap-8 justify-around items-center border-y-2 border-[var(--gold)] p-12 text-xl text-center">
-              <h3>Fill the form down below to participate!</h3>
-          </section>
-
-          <section class="flex justify-center items-center gap-8 p-16 flex-wrap">
-            <div class="max-w-[500px]">
-              <img src="/img/formImg.jpg" alt="#" class="w-full border-2 border-[var(--gold)] rounded-3xl"/>
-            </div>
-      
-            <form class="flex flex-col items-start gap-4" id="form">
-                <label for="name" class="flex flex-col gap-2">
-                  <span class="text-md font-bold">Full Name</span>
-                  <input type="text" name="name" id="name" required class="rounded-lg text-[var(--dark)] focus:border-2 focus:border-[var(--gold)] border-2 border-[var(--light)]"/>
-                </label>
-              <label for="email" class="flex flex-col gap-2">
-                <span class="text-md font-bold">Email</span>
-                <input type="email" name="email" id="email" required class="rounded-lg text-[var(--dark)] focus:border-2 focus:border-[var(--gold)] border-2 border-[var(--light)]"/>
-              </label>
-              <label for="country" class="flex flex-col gap-2">
-                <span class="text-md font-bold">Country</span>
-                <input type="text" name="country" id="country" required class="rounded-lg text-[var(--dark)] focus:border-2 focus:border-[var(--gold)] border-2 border-[var(--light)]"/>
-              </label>
-
-              <div class="flex flex-col">
-                <span class="mb-2 text-md font-bold">Gender</span>
-                <div class="flex items-start gap-4">
-                  <label>
-                    <input type="radio" name="gender" value="f" class="text-[var(--gold)]"/>
-                    <span>Female</span>
-                  </label>
-      
-                  <label>
-                    <input type="radio" name="gender" value="m" class="text-[var(--gold)]"/>
-                    <span>Male</span>
-                  </label>
-      
-                  <label>
-                    <input type="radio" name="gender" value="o" class="text-[var(--gold)]"/>
-                    <span>Other</span>
-                  </label>
-                </div>
-                </div>
-
-                <input type="submit" value="Submit" class="bg-[var(--gold)] font-bold hover:text-[var(--gold)] hover:bg-black text-black px-4 py-1 border-2 border-[var(--gold)] hover:border-[var(--gold)] transition-all duration-300 rounded cursor-pointer" />
-            </form>
-          </section>
-
-
-    </main>
+     <HeroMG/>
+    <BannerMG>
+      <InfoItemMG text="Buenos Aires" icon="fa-solid fa-location-dot"/>
+      <InfoItemMG text="23/10" icon="fa-solid fa-calendar-days"/>
+      <InfoItemMG text="21:00hs" icon="fa-solid fa-clock"/>
+     </BannerMG>
+       <Info/>
+      <BannerMG>
+        <h3>Fill the form down below to participate!</h3>
+      </BannerMG>
+      <FormSectionMG/>
 </Layout>
 

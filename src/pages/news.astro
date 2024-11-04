@@ -1,52 +1,11 @@
 ---
-import NewsCard from "../components/NewsCard.astro"
+import NewsCard from "../components/NewsCard"
 import Layout from "../layouts/Layout.astro"
-const data = await fetch("https://joacomesa22.github.io/csce242/json/news.json")
-const res = await data.json()
+import HeroNews from "../sections/news/HeroNews"
+import NewsSection from "../sections/news/NewsSection"
 ---
 
 <Layout title="News - L10">
-    <main>
-        <!-- Hero -->
-        <section
-          class="flex items-center justify-center"
-        >
-        <div class="max-w-screen-xl flex flex-col md:flex-row w-full justify-between items-center px-4 py-16 gap-8">
-          <div
-            class="flex flex-col gap-4 items-start max-w-[500px] sm:max-w-[600px]"
-          >
-            <p class="text-[#E8B34B] font-bold">Last minute news...</p>
-            <h2 class="text-4xl font-bold">
-              Lionel Messi will play for Inter Miami next season
-            </h2>
-            <p class="text-sm">
-              After a long series of rumors, the greatest player of all time has revealed that his next destination will be Inter Miami, a club owned by former English footballer David Beckham.
-            </p>
-            <a
-              href="#"
-              class="bg-[#E8B34B] font-bold hover:text-[#E8B34B] hover:bg-black text-black px-4 py-1 border-2 border-[#E8B34B] hover:border-[#E8B34B] transition-all duration-300 rounded"
-              target="_blank"
-              >Read More</a
-            >
-          </div>
-          <div class="w-full h-[400px]">
-            <iframe class="w-full h-full border-2 border-[var(--gold)] rounded-md" src="https://www.youtube.com/embed/esB0AkFIDeE" title="Lionel Messi Officially Announced for Inter Miami"></iframe>
-          </div>
-        </div>
-        </section>
-  
-        <!-- Novedades -->
-        <section class="pb-16 px-4 flex justify-center">
-            <div class="max-w-screen-xl w-full flex flex-col gap-8">
-          <h2 class="text-2xl md:text-4xl font-bold text-center">
-            More intereting news...
-          </h2>
-          <div class="flex flex-wrap justify-center gap-6 w-full">
-            {res.map(item => {
-              return <NewsCard imgSrc={item.img} hours={item.hours} text={item.title} link={item.link} category={item.category}/>
-            })}
-          </div>
-        </div>
-        </section>
-      </main> 
+        <HeroNews/>
+        <NewsSection client:load/>
 </Layout>

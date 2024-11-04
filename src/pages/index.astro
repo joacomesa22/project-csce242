@@ -1,109 +1,20 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Header from '../components/Header.astro';
-import GameCard from "../components/GameCard.astro";
-import LogoSlider from "../components/LogoSlider.astro";
-import Footer from "../components/Footer.astro";
+import LogoSlider from "../components/LogoSlider";
+import Hero from "../sections/home/Hero"
+import CounterSection from "../sections/home/CounterSection"
+import Games from "../sections/home/Games"
+import Store from "../sections/home/Store"
+
+const images = await Astro.glob("/public/img/logo-slider/*.png");
 ---
 
 <Layout title="Home - L10">
-	 <!-- Header -->
-	  <main>
-		<!-- Hero -->
-		<section
-		  class="herobg bg-[75%] flex justify-center items-center border-b-2 border-[var(--gold)]"
-		>
-		  <div
-			class="hero-text-shadow text-center sm:text-start p-4 flex flex-col gap-2 max-w-[1280px] w-full"
-		  >
-			<h1 class="text-4xl md:text-5xl lg:text-7xl font-bold">
-			  Welcome to <span class="text-[var(--gold)]">L10</span>!
-			</h1>
-			<h2 class="lg:text-2xl font-bold">
-			  The
-			  <span class="text-[var(--gold)]">best</span> player deserves the
-			  <span class="text-[var(--gold)]">best</span> fanpage
-			</h2>
-			<p class="text-sm lg:text-base">
-				Get access to breaking news, exclusive content, giveaways, and more!
-			</p>
-		  </div>
-		</section>
-  
-		<!-- Contador -->
-		<section
-		  class="p-10 flex justify-center items-center border-b-2 border-[var(--gold)]"
-		>
-		  <div
-			class="flex items-center gap-8 lg:gap-14 flex-wrap justify-center text-center"
-		  >
-			<h2 class="text-4xl">Next Game:</h2>
-			<div class="flex gap-6">
-			  <div class="flex flex-col items-center">
-				<span class="text-6xl text-[var(--gold)] font-bold">12</span>
-				<p>days</p>
-			  </div>
-			  <div class="flex flex-col items-center">
-				<span class="text-6xl text-[var(--gold)] font-bold">19</span>
-				<p>hours</p>
-			  </div>
-			  <div class="flex flex-col items-center">
-				<span class="text-6xl text-[var(--gold)] font-bold">43</span>
-				<p>minutes</p>
-			  </div>
-			</div>
-		  </div>
-		</section>
-  
-		<!-- Partidos Cards -->
-		<section class="flex justify-center items-center p-10 md:p-24">
-		  <div class="flex flex-wrap justify-center max-w-[1200px] gap-9">
-			<GameCard time="5 Jun - 12:00pm" badgeLocal="img/afa.png" badgeAway="img/australia.png" type="Friendly"/>
-			<GameCard time="12 Jun - 17:15" badgeLocal="img/inter-badge.png" badgeAway="img/orlando.svg" type="MLS"/>
-			<GameCard time="29 Jun - 20:00pm" badgeLocal="img/inter-badge.png" badgeAway="img/atlanta.svg" type="MLS"/>
-
-		  </div>
-		</section>
-  
-		<!-- Sponsors -->
+		<Hero/>
+		<CounterSection/>
+		<Games/>
 		<section class="bg-[var(--gold)]  py-6">
-		 <LogoSlider/>
+		 <LogoSlider images={images}/>
 		</section>
-  
-		<!-- Tienda -->
-		<section
-		  class="flex flex-wrap md:flex-nowrap justify-center items-center md:p-24 md:gap-16 p-16 gap-4"
-		>
-		  <div class="w-full lg:max-w-[600px]">
-			<img
-			  src="img/store.jpg"
-			  alt="Messi Store"
-			  class="rounded-md border-2 border-[var(--gold)]"
-			/>
-		  </div>
-		  <div
-			class="flex flex-col gap-4 md:items-start text-center md:text-start"
-		  >
-			<h2 class="text-3xl md:text-4xl font-bold">The Messi Store</h2>
-			<p class="max-w-[600px]">
-				Visit the official store of the Argentinian superstar, where you'll discover a wide variety of clothing and accessories, allowing you to dress like the best in the world. From casual wear to sports gear, find everything you need to embody the style of a true champion.
-			</p>
-			<a
-			  href="https://www.themessistore.com/"
-			  class="bg-[var(--gold)] font-bold hover:text-[var(--gold)] hover:bg-black text-black px-4 py-1 border-2 border-[var(--gold)] hover:border-[var(--gold)] transition-all duration-300 rounded"
-			  target="_blank"
-			  >Visit</a
-			>
-		  </div>
-		</section>
-	  </main>
-  
+		<Store/>
 </Layout>
-
-<style>
-	.herobg {
-    background-image: url("/img/hero.jpg");
-    background-size: cover;
-    height: calc(100vh - 143px);
-	}
-</style>
