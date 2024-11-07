@@ -7,7 +7,7 @@ const NewsSection = () => {
   useEffect(() => {
     const getNews = async () => {
       const res = await fetch(
-        "https://joacomesa22.github.io/csce242/json/news.json"
+        "https://server-helloworld-7ybx.onrender.com/api/news"
       );
       const data = await res.json();
       setNews(data);
