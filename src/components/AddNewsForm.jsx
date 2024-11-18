@@ -101,7 +101,7 @@ const AddNewsForm = () => {
         <p>Image Preview:</p>
         <img
           id="img-prev"
-          className="max-w-[300px]"
+          className="max-w-[100px]"
           alt=""
           src={inputs.img != null ? URL.createObjectURL(inputs.img) : ""}
         />
