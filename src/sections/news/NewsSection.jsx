@@ -6,9 +6,7 @@ const NewsSection = () => {
 
   useEffect(() => {
     const getNews = async () => {
-      const res = await fetch(
-        "https://server-helloworld-7ybx.onrender.com/api/news"
-      );
+      const res = await fetch("http://localhost:3002/api/news");
       const data = await res.json();
       setNews(data);
     };
@@ -25,7 +23,6 @@ const NewsSection = () => {
             return (
               <NewsCard
                 imgSrc={item.img}
-                hours={item.hours}
                 text={item.title}
                 link={item.link}
                 category={item.category}

@@ -1,12 +1,14 @@
 ---
 import Layout from "../layouts/Layout.astro"
+import AddNews from "../sections/admin/AddNews"
 import AdminTitle from "../sections/admin/AdminTitle"
 import TableSection from "../sections/admin/TableSection"
 ---
 
 <Layout title="Admin - L10">
-    <main class="h-screen">
+    <main>
        <AdminTitle/>
        <TableSection />
+        <AddNews client:load/>
     </main>
 </Layout>
