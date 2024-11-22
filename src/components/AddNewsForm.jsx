@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const AddNewsForm = () => {
+const AddNewsForm = (props) => {
   const [inputs, setInputs] = useState({});
   const [result, setResult] = useState("");
 
@@ -52,16 +52,15 @@ const AddNewsForm = () => {
     }
 
     try {
-      const response = await fetch(
-        "https://server-helloworld-7ybx.onrender.com/api/news",
-        {
-          method: "POST",
-          body: formData,
-        }
-      );
+      const response = await fetch("http://localhost:3002/api/news", {
+        method: "POST",
+        body: formData,
+      });
 
       if (response.ok) {
         setResult("News successfully added");
+        props.updateArticles(await response.json());
+        props.closeDialog();
       } else {
         setResult("Error adding news");
       }
