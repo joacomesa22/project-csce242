@@ -52,10 +52,13 @@ const AddNewsForm = (props) => {
     }
 
     try {
-      const response = await fetch("http://localhost:3002/api/news", {
-        method: "POST",
-        body: formData,
-      });
+      const response = await fetch(
+        "https://server-helloworld-7ybx.onrender.com/api/news",
+        {
+          method: "POST",
+          body: formData,
+        }
+      );
 
       if (response.ok) {
         setResult("News successfully added");

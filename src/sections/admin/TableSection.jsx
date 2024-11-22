@@ -9,7 +9,9 @@ const TableSection = () => {
 
   useEffect(() => {
     const getNews = async () => {
-      const res = await fetch("http://localhost:3002/api/news");
+      const res = await fetch(
+        "https://server-helloworld-7ybx.onrender.com/api/news"
+      );
       const data = await res.json();
       setNews(data);
     };

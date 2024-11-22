@@ -51,7 +51,7 @@ const EditArticleDialog = (props) => {
     }
 
     const response = await fetch(
-      `http://localhost:3002/api/news/${props._id}`,
+      `https://server-helloworld-7ybx.onrender.com/api/news/${props._id}`,
       {
         method: "PUT",
         body: formData,
@@ -115,7 +115,7 @@ const EditArticleDialog = (props) => {
                 inputs.img instanceof File
                   ? URL.createObjectURL(inputs.img)
                   : inputs.img
-                  ? `http://localhost:3002/images/${inputs.img}`
+                  ? `https://server-helloworld-7ybx.onrender.com/images/${inputs.img}`
                   : ""
               }
             />

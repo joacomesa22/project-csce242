@@ -3,7 +3,7 @@ const NewsCard = ({ imgSrc, text, category, link }) => {
     <div className="border-2 rounded-md border-[#E8B34B] w-full md:max-w-[280px] overflow-hidden">
       <div className="w-full">
         <img
-          src={`http://localhost:3002/images/${imgSrc}`}
+          src={`https://server-helloworld-7ybx.onrender.com/images/${imgSrc}`}
           alt={text}
           className="w-full"
         />

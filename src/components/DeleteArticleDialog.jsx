@@ -5,7 +5,7 @@ const DeleteArticleDialog = (props) => {
 
   const deleteArticle = async () => {
     const response = await fetch(
-      `http://localhost:3002/api/news/${props._id}`,
+      `https://server-helloworld-7ybx.onrender.com/api/news/${props._id}`,
       {
         method: "DELETE",
       }
