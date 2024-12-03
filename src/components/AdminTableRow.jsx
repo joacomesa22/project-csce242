@@ -34,33 +34,33 @@ const AdminTableRow = (props) => {
 
   return (
     <>
+      <>
+        {showDeleteDialog ? (
+          <DeleteArticleDialog
+            closeDialog={closeDeleteDialog}
+            title={article.title}
+            _id={article._id}
+            hideArticle={hideArticle}
+          />
+        ) : (
+          ""
+        )}
+        {showEditDialog ? (
+          <EditArticleDialog
+            closeDialog={closeEditDialog}
+            updateArticle={editArticle}
+            _id={article._id}
+            title={article.title}
+            link={article.link}
+            img={article.img}
+            category={article.category}
+          />
+        ) : (
+          ""
+        )}
+      </>
       {showArticle ? (
         <tr className="bg-[#2c2c2c]  border-b ">
-          <td>
-            {showDeleteDialog ? (
-              <DeleteArticleDialog
-                closeDialog={closeDeleteDialog}
-                title={article.title}
-                _id={article._id}
-                hideArticle={hideArticle}
-              />
-            ) : (
-              ""
-            )}
-            {showEditDialog ? (
-              <EditArticleDialog
-                closeDialog={closeEditDialog}
-                updateArticle={editArticle}
-                _id={article._id}
-                title={article.title}
-                link={article.link}
-                img={article.img}
-                category={article.category}
-              />
-            ) : (
-              ""
-            )}
-          </td>
           <td
             scope="row"
             className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
