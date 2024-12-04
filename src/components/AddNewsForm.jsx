@@ -150,7 +150,7 @@ const AddNewsForm = (props) => {
       <input
         type="submit"
         value="Submit"
-        className="bg-[var(--gold)] hover:bg-black border-2 border-[var(--gold)] duration-300 text-black hover:text-white cursor-pointer w-max p-2 px-4"
+        className="bg-[var(--gold)] font-bold hover:text-[var(--gold)] hover:bg-black text-black p-3 border-2 border-[var(--gold)] hover:border-[var(--gold)] transition-all duration-300 rounded cursor-pointer"
       />
       <p id="result">{result}</p>
     </form>

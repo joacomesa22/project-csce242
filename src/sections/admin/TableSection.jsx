@@ -27,7 +27,7 @@ const TableSection = () => {
   };
 
   return (
-    <section className="flex flex-col justify-center items-center px-4">
+    <section className="flex flex-col justify-center items-center px-4 pb-16 gap-4">
       {showAddDialog ? (
         <AddNews
           client:load
@@ -37,14 +37,16 @@ const TableSection = () => {
       ) : (
         ""
       )}
-      <button
-        onClick={() => {
-          setShowAddDialog(!showAddDialog);
-        }}
-        className="border-2 p-4"
-      >
-        Add Article
-      </button>
+      <div className="max-w-screen-xl w-full flex justify-start">
+        <button
+          onClick={() => {
+            setShowAddDialog(!showAddDialog);
+          }}
+          className="bg-[var(--gold)] font-bold hover:text-[var(--gold)] hover:bg-black text-black p-3 border-2 border-[var(--gold)] hover:border-[var(--gold)] transition-all duration-300 rounded"
+        >
+          Add Article
+        </button>
+      </div>
       <div className="relative overflow-x-auto max-w-screen-xl w-full">
         <table className="w-full text-sm text-left rtl:text-right text-[var(--light)] ">
           <thead className="text-xs text-[var(--gold)] uppercase bg-[var(--dark)] border-2 border-[var(--gold)]">
